@@ -1,13 +1,17 @@
 import { Page, Locator } from '@playwright/test';
 
 export class LoginPage {
-  constructor(private page: Page) {}
- 
-  usernameField = this.page.locator("input[formcontrolname='username']");
-  passwordField = this.page.locator("input[formcontrolname='password']");
-  
-  loginButton = this.page.locator('mat-card-actions').getByRole('button', { name: 'Login' });
- async open() {
+  usernameField: Locator;
+  passwordField: Locator;
+  loginButton: Locator;
+
+  constructor(private page: Page) {
+    this.usernameField = this.page.locator("input[formcontrolname='username']");
+    this.passwordField = this.page.locator("input[formcontrolname='password']");
+    this.loginButton = this.page.locator('mat-card-actions').getByRole('button', { name: 'Login' });
+  }
+
+  async open() {
 
     await this.page.goto('https://bookcart.azurewebsites.net/login');
   }

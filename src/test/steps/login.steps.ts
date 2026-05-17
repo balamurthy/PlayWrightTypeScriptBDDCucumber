@@ -44,6 +44,12 @@ let hp: homePage;
             await lp.clickLoginButton();
             
           });
+
+              When ('login button is clicked', async function () {
+                // Write code here that turns the phrase above into concrete actions
+                console.log("Clicking on the login button - When step");  
+              });
+
             Then('Login should be success', async function () {
            // Write code here that turns the phrase above into concrete actions
               
@@ -63,5 +69,9 @@ let hp: homePage;
             
             console.log("Login failed as expected!");
           });
+
+When('login button is clicked', () => {
+  // Write code here that turns the phrase above into concrete actions
+})
 
 
